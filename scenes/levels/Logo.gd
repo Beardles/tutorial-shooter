@@ -5,19 +5,18 @@ var test_scale: float = 1
 
 const speed: int = 200
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pos = Vector2(300, 200)
-	position = pos # Replace with function body.
+	position = pos
 	
 	var test_rotation = 45
 	rotation_degrees = rad_to_deg(test_rotation)
 	
 	test_scale = 2
-	set_scale(Vector2(test_scale,test_scale))
+	scale = Vector2(test_scale,test_scale)
+	print($"..".test_array)
+	$"..".test_function()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pos.x += speed * delta
 	position = pos
