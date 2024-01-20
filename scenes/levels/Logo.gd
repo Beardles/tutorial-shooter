@@ -3,7 +3,7 @@ extends Node2D
 var pos: Vector2 = Vector2.ZERO
 var test_scale: float = 1
 
-const speed: int = 10
+const speed: int = 200
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,8 +18,8 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pos.x += speed
+func _process(delta):
+	pos.x += speed * delta
 	position = pos
 
 	 #test_scale += 0.1
