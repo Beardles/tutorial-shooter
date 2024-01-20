@@ -21,6 +21,6 @@ func _ready():
 func _process(_delta):
 	pos.x += speed
 	position = pos
-	test_scale += 0.1
-	
-	#set_scale(Vector2(test_scale, test_scale))
+
+	 #test_scale += 0.1
+	 #set_scale(Vector2(test_scale, test_scale))
