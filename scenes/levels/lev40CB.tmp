@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2ewdsthbjihi"]
+[gd_scene load_steps=5 format=3 uid="uid://c2ewdsthbjihi"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_m2m2d"]
 [ext_resource type="PackedScene" uid="uid://lnlkkuo3o1s" path="res://scenes/player/player.tscn" id="4_ju0h3"]
-[ext_resource type="PackedScene" uid="uid://duoyxbyn4j72j" path="res://scenes/drone.tscn" id="4_rwqtk"]
 [ext_resource type="PackedScene" uid="uid://s8yqidldxgpu" path="res://scenes/toilet.tscn" id="4_sbo4r"]
 [ext_resource type="PackedScene" uid="uid://l5cej54etk4q" path="res://scenes/bed.tscn" id="5_83wp7"]
 
@@ -12,11 +11,8 @@ script = ExtResource("1_m2m2d")
 [node name="Bed" parent="." instance=ExtResource("5_83wp7")]
 position = Vector2(17, -395)
 
-[node name="Toilet" parent="." instance=ExtResource("4_sbo4r")]
-position = Vector2(-461, -141)
-
 [node name="Player" parent="." instance=ExtResource("4_ju0h3")]
 position = Vector2(468, 447)
 
-[node name="Drone" parent="." instance=ExtResource("4_rwqtk")]
-position = Vector2(-153, 136)
+[node name="Toilet" parent="." instance=ExtResource("4_sbo4r")]
+position = Vector2(-461, -141)
