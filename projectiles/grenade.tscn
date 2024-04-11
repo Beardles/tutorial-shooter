@@ -11,7 +11,7 @@ radius = 23.0868
 [node name="Grenade" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_1pt4r")
 gravity_scale = 1.66533e-16
-linear_velocity = Vector2(100, 2.08165e-12)
+linear_velocity = Vector2(2.08165e-12, 2.08165e-12)
 script = ExtResource("1_x6ody")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
