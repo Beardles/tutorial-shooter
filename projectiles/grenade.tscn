@@ -4,6 +4,8 @@
 [ext_resource type="Script" path="res://projectiles/grenade.gd" id="1_x6ody"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1pt4r"]
+friction = 10.0
+bounce = 0.4
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oadxf"]
 radius = 23.0868
@@ -12,6 +14,7 @@ radius = 23.0868
 physics_material_override = SubResource("PhysicsMaterial_1pt4r")
 gravity_scale = 1.66533e-16
 linear_velocity = Vector2(2.08165e-12, 2.08165e-12)
+linear_damp = 1.6
 script = ExtResource("1_x6ody")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

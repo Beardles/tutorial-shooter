@@ -8,6 +8,7 @@ height = 102.0
 
 [node name="Laser" type="Area2D"]
 script = ExtResource("1_bcn5d")
+speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, 30)
