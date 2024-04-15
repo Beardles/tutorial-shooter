@@ -1,17 +1,97 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2ewdsthbjihi"]
+[gd_scene load_steps=15 format=3 uid="uid://c2ewdsthbjihi"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_m2m2d"]
+[ext_resource type="Texture2D" uid="uid://cbtdl00tvruy8" path="res://graphics/ground/stones.png" id="2_736pn"]
+[ext_resource type="Texture2D" uid="uid://uvaxudt64cqc" path="res://graphics/decals/moss/moss_1.png" id="3_bp2ly"]
 [ext_resource type="PackedScene" uid="uid://drv1cd2vwcv88" path="res://scenes/objects/gate.tscn" id="3_gux3t"]
+[ext_resource type="Texture2D" uid="uid://bdffolm6desx6" path="res://graphics/decals/dirt_patch.png" id="3_ksdf7"]
 [ext_resource type="PackedScene" uid="uid://lnlkkuo3o1s" path="res://scenes/player/player.tscn" id="4_ju0h3"]
+[ext_resource type="Texture2D" uid="uid://2xe2npffk1bi" path="res://graphics/decals/moss/moss_2.png" id="4_ygj3p"]
+[ext_resource type="Texture2D" uid="uid://d3n2u01v52oxr" path="res://graphics/decals/moss/moss_3.png" id="5_3fyjm"]
+[ext_resource type="Texture2D" uid="uid://ci7llaew8hcah" path="res://graphics/decals/moss/moss_4.png" id="6_lo5wt"]
+[ext_resource type="Texture2D" uid="uid://r6eojeyeunbw" path="res://graphics/tilesets/outside_walls.png" id="8_mru6e"]
+[ext_resource type="Texture2D" uid="uid://c832x1bwyskd6" path="res://graphics/tilesets/soil.png" id="9_gn7lq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w6mrr"]
+resource_name = "walls"
+texture = ExtResource("8_mru6e")
+texture_region_size = Vector2i(390, 390)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_co6st"]
+texture = ExtResource("9_gn7lq")
+texture_region_size = Vector2i(390, 390)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_u8m5r"]
+tile_size = Vector2i(390, 390)
+sources/0 = SubResource("TileSetAtlasSource_w6mrr")
+sources/1 = SubResource("TileSetAtlasSource_co6st")
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_m2m2d")
+
+[node name="Ground" type="Node2D" parent="."]
+
+[node name="Soil" type="Sprite2D" parent="Ground"]
+texture_repeat = 2
+position = Vector2(602, 523)
+texture = ExtResource("2_736pn")
+region_enabled = true
+region_rect = Rect2(-1680.89, -813.563, 6122.25, 2983.5)
+
+[node name="Moss1" type="Sprite2D" parent="Ground"]
+position = Vector2(1998, 795)
+texture = ExtResource("3_bp2ly")
+
+[node name="Moss2" type="Sprite2D" parent="Ground"]
+position = Vector2(2054, 1123)
+texture = ExtResource("4_ygj3p")
+
+[node name="Moss3" type="Sprite2D" parent="Ground"]
+position = Vector2(1494, 1363)
+texture = ExtResource("5_3fyjm")
+
+[node name="Moss4" type="Sprite2D" parent="Ground"]
+position = Vector2(2510, 491)
+texture = ExtResource("6_lo5wt")
+
+[node name="Decoration" type="Sprite2D" parent="Ground"]
+modulate = Color(0.952941, 0.65098, 0.494118, 0.584314)
+position = Vector2(-760, 1232)
+texture = ExtResource("3_ksdf7")
+
+[node name="TileMap" type="TileMap" parent="Ground"]
+tile_set = SubResource("TileSet_u8m5r")
+format = 2
+layer_0/tile_data = PackedInt32Array(-3, 131072, 0, -4, 65536, 0, -5, 65536, 0, -6, 65536, 0, -7, 0, 0, -65531, 65536, 2, -131067, 0, 2, -196603, 0, 2, -262139, 0, 1, -65530, 65536, 0, -65529, 65536, 0, -65528, 131072, 1, 8, 0, 2, 65544, 0, 2, 131080, 0, 2, 196616, 0, 3)
 
 [node name="Gate" parent="." instance=ExtResource("3_gux3t")]
 position = Vector2(524, -551)
 
 [node name="Player" parent="." instance=ExtResource("4_ju0h3")]
 position = Vector2(606, 576)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.6, 0.6)
+position_smoothing_enabled = true
 
 [node name="Projectiles" type="Node2D" parent="."]
 
