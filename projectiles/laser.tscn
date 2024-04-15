@@ -4,11 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://do8ee70duq0av" path="res://graphics/projectiles/blue.png" id="1_laobd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b1jp1"]
+radius = 6.0
 height = 102.0
 
 [node name="Laser" type="Area2D"]
+collision_layer = 8
+collision_mask = 7
 script = ExtResource("1_bcn5d")
-speed = null
+speed = 2000
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, 30)

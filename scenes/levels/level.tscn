@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c2ewdsthbjihi"]
+[gd_scene load_steps=16 format=3 uid="uid://c2ewdsthbjihi"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_m2m2d"]
 [ext_resource type="Texture2D" uid="uid://cbtdl00tvruy8" path="res://graphics/ground/stones.png" id="2_736pn"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ci7llaew8hcah" path="res://graphics/decals/moss/moss_4.png" id="6_lo5wt"]
 [ext_resource type="Texture2D" uid="uid://r6eojeyeunbw" path="res://graphics/tilesets/outside_walls.png" id="8_mru6e"]
 [ext_resource type="Texture2D" uid="uid://c832x1bwyskd6" path="res://graphics/tilesets/soil.png" id="9_gn7lq"]
+[ext_resource type="PackedScene" uid="uid://de3dhaaa8god6" path="res://scenes/houses/house.tscn" id="10_bqqmj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w6mrr"]
 resource_name = "walls"
@@ -85,6 +86,10 @@ texture = ExtResource("3_ksdf7")
 [node name="Moss2" type="Sprite2D" parent="Ground"]
 position = Vector2(3553, -48)
 texture = ExtResource("4_ygj3p")
+
+[node name="House" parent="Ground" instance=ExtResource("10_bqqmj")]
+position = Vector2(-2406, 3691)
+rotation = -2.18166
 
 [node name="Gate" parent="." instance=ExtResource("3_gux3t")]
 position = Vector2(524, -551)
