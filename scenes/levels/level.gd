@@ -15,6 +15,7 @@ func _on_player_laser(pos, direction):
 	laser.direction = direction
 	$Projectiles.add_child(laser)
 	
+	
 
 
 func _on_player_grenade(pos, direction):

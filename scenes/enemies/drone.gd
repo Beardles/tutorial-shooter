@@ -1,10 +1,5 @@
 extends CharacterBody2D
 
-var direction: String = "right"
-var directionMap = {
-	"left": -250,
-	"right": 250
-}
 
 func _process(_delta):
 	# direction
@@ -15,3 +10,6 @@ func _process(_delta):
 
 	# move_and_slide
 	move_and_slide()
+
+func hit():
+	print('damage')
