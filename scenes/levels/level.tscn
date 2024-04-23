@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2ewdsthbjihi"]
+[gd_scene load_steps=4 format=3 uid="uid://c2ewdsthbjihi"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_m2m2d"]
+[ext_resource type="PackedScene" uid="uid://bps72xspc1pk" path="res://ui/ui.tscn" id="3_6tyng"]
 [ext_resource type="PackedScene" uid="uid://lnlkkuo3o1s" path="res://scenes/player/player.tscn" id="4_ju0h3"]
 
 [node name="Level" type="Node2D"]
@@ -19,6 +20,8 @@ zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
 
 [node name="Lights" type="Node2D" parent="."]
+
+[node name="UI" parent="." instance=ExtResource("3_6tyng")]
 
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]
