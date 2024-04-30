@@ -8,9 +8,17 @@ var type_to_color_map = {
 	'grenade': Color(0.8, 0.2, 0.1),
 	'health': Color(0.1, 0.8, 0.1)
 }
+var direction: Vector2
+var distance: int = randi_range(150, 250)
 
 func _ready():
 	$Sprite2D.modulate = type_to_color_map.get(type)
+	
+	var target_pos = position + direction * distance
+	var tween = create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(self, "position", target_pos, 0.5)
+	tween.tween_property(self, "scale", Vector2(1,1), 0.3).from(Vector2(0,0))
 
 
 func _process(delta):

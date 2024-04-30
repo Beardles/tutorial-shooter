@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://bmxub1u2depm5"]
 
 [ext_resource type="Texture2D" uid="uid://dlepm3u3em1ba" path="res://graphics/projectiles/grenade.png" id="1_qrbbh"]
-[ext_resource type="Script" path="res://projectiles/grenade.gd" id="1_x6ody"]
+[ext_resource type="Script" path="res://scenes/projectiles/grenade.gd" id="1_x6ody"]
 [ext_resource type="Texture2D" uid="uid://b44isc7n4ame3" path="res://graphics/explosions/explosion_3.png" id="3_j7mhk"]
 [ext_resource type="Texture2D" uid="uid://ckxfbl4oqmxej" path="res://graphics/lights/textures/circle.png" id="4_h8c40"]
 
