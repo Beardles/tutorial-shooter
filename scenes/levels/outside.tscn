@@ -107,6 +107,7 @@ autoplay = "default"
 frame_progress = 0.988399
 
 [node name="Player" parent="." index="5"]
+z_index = 2
 position = Vector2(633, 287)
 metadata/_edit_group_ = true
 

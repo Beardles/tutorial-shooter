@@ -11,6 +11,9 @@ script = ExtResource("1_m2m2d")
 
 [node name="Ground" type="Node2D" parent="."]
 
+[node name="Infestation" type="Node2D" parent="."]
+position = Vector2(-1, 0)
+
 [node name="Items" type="Node2D" parent="."]
 
 [node name="Projectiles" type="Node2D" parent="."]
