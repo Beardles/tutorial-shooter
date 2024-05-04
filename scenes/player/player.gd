@@ -9,6 +9,8 @@ var can_grenade: bool = true
 @export var max_speed: int = 500
 var speed: int = max_speed
 
+func hit():
+	Globals.health -= 10
 
 func _process(_delta):
 	# input
@@ -43,6 +45,7 @@ func _process(_delta):
 		var pos = $LaserStartPositions.get_children()[0].global_position
 
 		grenade.emit(pos, player_direction)
+		
 
 
 func _on_laser_timer_timeout():

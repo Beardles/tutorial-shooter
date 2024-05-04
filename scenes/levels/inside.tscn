@@ -283,7 +283,7 @@ position = Vector2(4461, 656)
 position = Vector2(24.5, -267)
 shape = SubResource("RectangleShape2D_c84xo")
 
-[node name="Player" parent="." index="8"]
+[node name="Player" parent="." index="9"]
 position = Vector2(4104, 375)
 rotation = 3.14159
 metadata/_edit_group_ = true
@@ -294,7 +294,7 @@ energy = 1.5
 texture = ExtResource("4_r54if")
 texture_scale = 3.0
 
-[node name="Lights" parent="." index="9"]
+[node name="Lights" parent="." index="10"]
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
