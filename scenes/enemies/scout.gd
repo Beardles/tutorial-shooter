@@ -4,20 +4,18 @@ var player_nearby: bool = false
 var can_laser: bool = true
 var right_gun_use: bool = true
 var is_vulnerable: bool = true
+@onready var hittable_component = $HittableComponent
 
 var health: int = 30
 
 signal laser(pos, direction)
 
 func hit():
-	if is_vulnerable:
-		health -= 10
-		is_vulnerable = false
-		$Timers/HitTimer.start()
-		$Sprite2D.material.set_shader_parameter("progress", 1)
+	$HittableComponent.hit()
+
+func _ready():
+	hittable_component.connect("on_hit", _on_hit)
 	
-	if health <= 0:
-		queue_free()
 
 func _process(_delta):
 	if player_nearby:
@@ -47,3 +45,9 @@ func _on_hit_timer_timeout():
 
 func _on_laser_timer_timeout():
 	can_laser = true
+
+func _on_hit(is_hit: bool):
+	if is_hit:
+		$Sprite2D.material.set_shader_parameter("progress", 1)
+	else:
+		$Sprite2D.material.set_shader_parameter("progress", 0)

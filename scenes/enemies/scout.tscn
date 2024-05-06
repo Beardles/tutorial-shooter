@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7ikqu34lavlb"]
+[gd_scene load_steps=8 format=3 uid="uid://c7ikqu34lavlb"]
 
 [ext_resource type="Texture2D" uid="uid://bj85t0kp5iu38" path="res://graphics/enemies/scout.png" id="1_1iilg"]
 [ext_resource type="Script" path="res://scenes/enemies/scout.gd" id="1_qwu8j"]
 [ext_resource type="Shader" path="res://scenes/enemies/scout.gdshader" id="2_40lyy"]
+[ext_resource type="Script" path="res://components/hittable.gd" id="4_pxmkk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nmmuw"]
 shader = ExtResource("2_40lyy")
@@ -53,6 +54,12 @@ one_shot = true
 [node name="HitTimer" type="Timer" parent="Timers"]
 wait_time = 0.2
 one_shot = true
+
+[node name="HittableComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("4_pxmkk")
+actor = NodePath("..")
+invulnerable_time = 0.2
+health = 30
 
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]
