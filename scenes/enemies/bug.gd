@@ -65,5 +65,8 @@ func _on_attack_timer_timeout():
 	if bug_sprite.animation == "attack":
 		bug_sprite.stop()
 
-func _on_hit():
-	pass
+func _on_hit(is_hit: bool):
+	if is_hit:
+		bug_sprite.material.set_shader_parameter("progress", 1)
+	else:
+		bug_sprite.material.set_shader_parameter("progress", 0)

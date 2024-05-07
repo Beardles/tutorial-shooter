@@ -1,9 +1,10 @@
-[gd_scene load_steps=37 format=3 uid="uid://d2ea6tnahcg1v"]
+[gd_scene load_steps=39 format=3 uid="uid://d2ea6tnahcg1v"]
 
 [ext_resource type="Script" path="res://scenes/enemies/bug.gd" id="1_durcs"]
 [ext_resource type="Script" path="res://components/hittable.gd" id="1_h6ah2"]
 [ext_resource type="Texture2D" uid="uid://xf2faxnbknxn" path="res://graphics/enemies/bug/attack/00010.png" id="1_klom5"]
 [ext_resource type="Texture2D" uid="uid://by0pcxpyluri7" path="res://graphics/enemies/bug/attack/00011.png" id="2_gk0fv"]
+[ext_resource type="Shader" path="res://scenes/enemies/scout.gdshader" id="2_pnu8p"]
 [ext_resource type="Texture2D" uid="uid://bwlcu7aqalrqq" path="res://graphics/enemies/bug/attack/00012.png" id="3_6gr17"]
 [ext_resource type="Texture2D" uid="uid://0u88eysh3hh4" path="res://graphics/enemies/bug/attack/00013.png" id="4_jvefr"]
 [ext_resource type="Texture2D" uid="uid://8kt7oygshcco" path="res://graphics/enemies/bug/attack/00014.png" id="5_m5tyn"]
@@ -32,6 +33,11 @@
 [ext_resource type="Texture2D" uid="uid://cdh6hsepq733h" path="res://graphics/enemies/bug/walk/00006.png" id="28_fuylk"]
 [ext_resource type="Texture2D" uid="uid://b6rxlsfb340if" path="res://graphics/enemies/bug/walk/00007.png" id="29_324pj"]
 [ext_resource type="Texture2D" uid="uid://qgubvfrvwupo" path="res://graphics/enemies/bug/walk/00008.png" id="30_xke5e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bnd68"]
+shader = ExtResource("2_pnu8p")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yamuh"]
 animations = [{
@@ -155,6 +161,7 @@ rotation = 1.5708
 polygon = PackedVector2Array(388, -125, 443, -77, 468, -13, 502, 42, 509, 80, 504, 103, 483, 91, 477, 104, 502, 142, 515, 195, 528, 252, 582, 277, 629, 277, 686, 290, 777, 315, 846, 363, 857, 434, 882, 506, 894, 569, 886, 603, 844, 702, 820, 720, 776, 728, 794, 700, 796, 677, 794, 654, 783, 630, 763, 620, 724, 608, 702, 605, 714, 620, 667, 594, 603, 496, 562, 425, 554, 398, 534, 397, 556, 560, 540, 600, 539, 649, 498, 706, 474, 730, 375, 873, 338, 892, 275, 914, 235, 917, 198, 941, 172, 944, 158, 964, 103, 977, 70, 973, -72, 986, -177, 962, -213, 934, -256, 924, -272, 929, -352, 890, -430, 817, -480, 733, -510, 674, -536, 632, -530, 613, -548, 580, -556, 520, -525, 394, -562, 412, -576, 449, -637, 557, -669, 592, -701, 626, -728, 616, -773, 634, -796, 661, -792, 705, -772, 728, -826, 717, -868, 654, -893, 578, -874, 485, -846, 398, -865, 388, -828, 346, -772, 318, -705, 302, -654, 282, -609, 281, -524, 254, -501, 140, -465, 101, -485, 93, -396, -82, -358, -112, -349, -146, -356, -180, -386, -206, -434, -232, -498, -279, -550, -330, -597, -426, -554, -447, -513, -596, -434, -696, -425, -615, -390, -530, -369, -519, -348, -542, -346, -475, -312, -412, -313, -390, -312, -327, -321, -303, -300, -288, -282, -315, -294, -342, -281, -383, -280, -410, -262, -427, -234, -519, -197, -531, -178, -548, -166, -604, -204, -628, -244, -682, -286, -714, -273, -790, -201, -943, -194, -843, -180, -787, -158, -764, -158, -739, -138, -707, -48, -759, -25, -762, 6, -810, 31, -766, 56, -763, 142, -715, 172, -751, 155, -768, 191, -803, 206, -875, 198, -972, 251, -887, 272, -819, 292, -722, 259, -692, 214, -636, 191, -631, 179, -608, 188, -559, 204, -534, 262, -536, 278, -482, 292, -428, 310, -386, 316, -339, 312, -318, 328, -299, 340, -291, 355, -308, 350, -347, 346, -394, 364, -462, 386, -483, 386, -532, 411, -518, 435, -555, 459, -603, 464, -658, 456, -700, 487, -680, 510, -647, 550, -584, 567, -516, 588, -458, 606, -436, 634, -434, 619, -395, 590, -334, 570, -310, 522, -266, 495, -256, 482, -239, 431, -207, 412, -191, 382, -172, 375, -151)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_bnd68")
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_yamuh")
 animation = &"walk"

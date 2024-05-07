@@ -38,11 +38,6 @@ func _on_attack_area_body_exited(_body):
 	player_nearby = false
 
 
-func _on_hit_timer_timeout():
-	is_vulnerable = true
-	$Sprite2D.material.set_shader_parameter("progress", 0)
-
-
 func _on_laser_timer_timeout():
 	can_laser = true
 
